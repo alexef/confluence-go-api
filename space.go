@@ -72,7 +72,7 @@ func addAllSpacesQueryParams(query AllSpacesQuery) *url.Values {
 		data.Set("type", query.Type)
 	}
 	if len(query.Labels) != 0 {
-		data.Set("labels", strings.Join(query.Labels, ","))
+		data.Set("label", strings.Join(query.Labels, ","))
 	}
 	return &data
 }
