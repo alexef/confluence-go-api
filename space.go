@@ -25,6 +25,7 @@ type AllSpacesQuery struct {
 	Start            int    // page start
 	Status           string // current, archived
 	Type             string // global, personal
+	Labels           []string
 }
 
 // getSpaceEndpoint creates the correct api endpoint
@@ -69,6 +70,9 @@ func addAllSpacesQueryParams(query AllSpacesQuery) *url.Values {
 	}
 	if query.Type != "" {
 		data.Set("type", query.Type)
+	}
+	if len(query.Labels) != 0 {
+		data.Set("labels", strings.Join(query.Labels, ","))
 	}
 	return &data
 }
