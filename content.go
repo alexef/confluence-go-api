@@ -106,11 +106,12 @@ type Version struct {
 
 // Space holds the Space information of a Content Page
 type Space struct {
-	ID     int    `json:"id,omitempty"`
-	Key    string `json:"key,omitempty"`
-	Name   string `json:"name,omitempty"`
-	Type   string `json:"type,omitempty"`
-	Status string `json:"status,omitempty"`
+	ID           int    `json:"id,omitempty"`
+	Key          string `json:"key,omitempty"`
+	Name         string `json:"name,omitempty"`
+	Type         string `json:"type,omitempty"`
+	Status       string `json:"status,omitempty"`
+	SpaceOwnerId string `json:"spaceOwnerId,omitempty"`
 }
 
 // getContentIDEndpoint creates the correct api endpoint by given id
