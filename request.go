@@ -55,7 +55,7 @@ func (a *API) Request(req *http.Request) ([]byte, error) {
 	Debug("====== /Response Body ======")
 
 	switch resp.StatusCode {
-	case http.StatusOK, http.StatusCreated, http.StatusPartialContent:
+	case http.StatusOK, http.StatusCreated, http.StatusPartialContent, http.StatusAccepted:
 		return res, nil
 	case http.StatusNoContent, http.StatusResetContent:
 		return nil, nil
